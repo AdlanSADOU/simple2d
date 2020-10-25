@@ -30,9 +30,9 @@ all: build
 
 build: .phony
 	if not exist build mkdir build
-	cl /c /EHsc /Fo.\build\ $(SRCS) $(INCLS)
+	cl /MP /c /EHsc /Fo.\build\ $(SRCS) $(INCLS)
 	lib $(OBJS) $(LIBS)
-	cl /LD /Fo.\build\ $(SRCS) $(INCLS) /link /LIBPATH $(LIBS) /SUBSYSTEM:CONSOLE /OUT:build\simple2d.dll
+	cl /MP /LD /Fo.\build\ $(SRCS) $(INCLS) /link /LIBPATH $(LIBS) /SUBSYSTEM:CONSOLE /OUT:build\simple2d.dll
 	del build\*.obj
 
 install:
