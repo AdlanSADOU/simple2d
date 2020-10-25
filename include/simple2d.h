@@ -209,6 +209,31 @@ typedef void (*S2D_On_Key)(S2D_Event e);
 typedef void (*S2D_On_Mouse)(S2D_Event e);
 typedef void (*S2D_On_Controller)(S2D_Event e);
 
+typedef struct {
+  float x;
+  float y;
+} S2D_Vec2f;
+
+typedef struct {
+  float x;
+  float y;
+} S2D_Vec2;
+
+typedef struct {
+  float x;
+  float y;
+  float width;
+  float height;
+} S2D_FRect;
+
+typedef struct {
+  int x;
+  int y;
+  int width;
+  int height;
+} S2D_IRect;
+
+
 // S2D_GL_Point, for graphics calculations
 typedef struct {
   GLfloat x;
