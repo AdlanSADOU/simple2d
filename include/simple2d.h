@@ -217,7 +217,7 @@ typedef struct {
 typedef struct {
   float x;
   float y;
-} S2D_Vec2;
+} S2D_Vec2i;
 
 typedef struct {
   float x;
@@ -232,7 +232,6 @@ typedef struct {
   int width;
   int height;
 } S2D_IRect;
-
 
 // S2D_GL_Point, for graphics calculations
 typedef struct {
