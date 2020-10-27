@@ -473,6 +473,13 @@ void S2D_DrawCircle(
   GLfloat r, GLfloat g, GLfloat b, GLfloat a
 );
 
+/*
+ * Draw a rectangle, using two triangles. Simplified version of quad
+ */
+void S2D_DrawRect(
+  GLfloat x, GLfloat y, GLfloat width, GLfloat height,
+  S2D_Color color, bool filled);
+
 // Image ///////////////////////////////////////////////////////////////////////
 
 /*
