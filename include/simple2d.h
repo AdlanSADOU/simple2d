@@ -222,8 +222,8 @@ typedef struct {
 typedef struct {
   float x;
   float y;
-  float width;
-  float height;
+  int width;
+  int height;
 } S2D_FRect;
 
 typedef struct {
@@ -320,8 +320,8 @@ typedef struct {
   const char *path;
   S2D_Image *img;
   S2D_Color color;
-  int x;
-  int y;
+  float x;
+  float y;
   int width;
   int height;
   int clip_width;

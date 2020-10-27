@@ -111,7 +111,7 @@ void S2D_DrawQuad(GLfloat x1, GLfloat y1,
 /*
  * Draw a rectangle, using two triangles. Simplified version of quad
  */
-void S2D_DrawRect_XYWH(GLfloat x, GLfloat y, GLfloat width, GLfloat height, S2D_Color color, bool filled) {
+void S2D_DrawRect_XYWH(GLfloat x, GLfloat y, int width, int height, S2D_Color color, bool filled) {
   GLfloat x1, y1, r1, g1, b1, a1,
           x2, y2, r2, g2, b2, a2,
           x3, y3, r3, g3, b3, a3,
@@ -141,10 +141,10 @@ void S2D_DrawRect(S2D_FRect rect, S2D_Color color, bool filled) {
           x3, y3, r3, g3, b3, a3,
           x4, y4, r4, g4, b4, a4;
 
-  x1 = rect.x,                y1 = rect.y;
-  x2 = rect.x + rect.width,   y2 = rect.y;
-  x3 = rect.x + rect.width,   y3 = rect.y + rect.height;
-  x4 = rect.x,                y4 = rect.y + rect.height;
+  x1 = rect.x,                       y1 = rect.y;
+  x2 = rect.x + (float)rect.width,   y2 = rect.y;
+  x3 = rect.x + (float)rect.width,   y3 = rect.y + (float)rect.height;
+  x4 = rect.x,                       y4 = rect.y + (float)rect.height;
 
   S2D_GL_DrawTriangle(x1, y1, color.r, color.g, color.b, color.a,
                       x2, y2, color.r, color.g, color.b, color.a,
