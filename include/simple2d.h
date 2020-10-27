@@ -203,7 +203,7 @@ typedef struct {
   int value;
 } S2D_Event;
 
-typedef void (*S2D_Update)();
+typedef void (*S2D_Update)(void *);
 typedef void (*S2D_Render)();
 typedef void (*S2D_On_Key)(S2D_Event e);
 typedef void (*S2D_On_Mouse)(S2D_Event e);
@@ -263,6 +263,7 @@ typedef struct {
 
 // S2D_Window
 typedef struct {
+  void *on_update_args;
   SDL_Window *sdl;
   SDL_GLContext glcontext;
   const GLubyte *S2D_GL_VENDOR;

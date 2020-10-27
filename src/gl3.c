@@ -217,7 +217,7 @@ void S2D_GL3_FlushBuffers() {
   glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(GLfloat) * vboDataIndex * 24, vboData);
 
   // Render all the triangles in the buffer
-  glDrawArrays(GL_TRIANGLES, 0, (GLsizei)(vboDataIndex * 3));
+  glDrawArrays(GL_LINE_LOOP, 0, (GLsizei)(vboDataIndex * 3));
 
   // Reset the buffer object index and data pointer
   vboDataIndex = 0;
