@@ -222,8 +222,8 @@ typedef struct {
 typedef struct {
   float x;
   float y;
-  int width;
-  int height;
+  float width;
+  float height;
 } S2D_FRect;
 
 typedef struct {
