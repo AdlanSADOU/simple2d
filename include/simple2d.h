@@ -215,8 +215,8 @@ typedef struct {
 } S2D_Vec2f;
 
 typedef struct {
-  float x;
-  float y;
+  int x;
+  int y;
 } S2D_Vec2i;
 
 typedef struct {
@@ -322,8 +322,8 @@ typedef struct {
   S2D_Color color;
   float x;
   float y;
-  int width;
-  int height;
+  float width;
+  float height;
   int clip_width;
   int clip_height;
   GLfloat rotate;  // Rotation angle in degrees
@@ -409,6 +409,17 @@ void S2D_GetDisplayDimensions(int *w, int *h);
  * Quits Simple 2D subsystems
  */
 void S2D_Quit(void);
+
+// Collision ///////////////////////////////////////////////////////////////////
+
+/*
+ * Check if there is collision between two rectangles
+ */
+bool S2D_Intersect_FRect(S2D_FRect rect1, S2D_FRect rect2);
+/*
+ * Check if a rectangle contains a point (ie. if mouse pointer inside a rectangle)
+ */
+bool S2D_Intersect_Point_FRect(S2D_FRect rect, int point_x, int point_y);
 
 // Shapes //////////////////////////////////////////////////////////////////////
 

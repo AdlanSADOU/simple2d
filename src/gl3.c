@@ -217,7 +217,11 @@ void S2D_GL3_FlushBuffers() {
   glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(GLfloat) * vboDataIndex * 24, vboData);
 
   // Render all the triangles in the buffer
+#if defined(DEBUG)
   glDrawArrays(GL_LINE_LOOP, 0, (GLsizei)(vboDataIndex * 3));
+#else
+  glDrawArrays(GL_TRIANGLES, 0, (GLsizei)(vboDataIndex * 3));
+#endif // DEBUG
 
   // Reset the buffer object index and data pointer
   vboDataIndex = 0;
@@ -256,7 +260,7 @@ void S2D_GL3_DrawTriangle(GLfloat x1, GLfloat y1,
 /*
  * Draw a texture
  */
-static void S2D_GL3_DrawTexture(float x, float y, int w, int h,
+static void S2D_GL3_DrawTexture(float x, float y, float w, float h,
                                 GLfloat angle, GLfloat rx, GLfloat ry,
                                 GLfloat r, GLfloat g, GLfloat b, GLfloat a,
                                 GLfloat tx1, GLfloat ty1, GLfloat tx2, GLfloat ty2,
