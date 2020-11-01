@@ -315,7 +315,7 @@ int S2D_Show(S2D_Window *window) {
     window->fps        = fps;
 
     // Call update and render callbacks
-    if (window->update) window->update(window->on_update_args);
+    if (window->update) window->update(window->on_UpdateArgs);
     if (window->render) window->render();
 
     // Draw Frame //////////////////////////////////////////////////////////////

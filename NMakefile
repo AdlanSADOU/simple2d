@@ -29,6 +29,13 @@ VC_RELEASE=simple2d-windows-vc-VERSION
 
 all: build
 
+debug: .phony
+	if not exist build mkdir build
+	cl /Zi /MP /c /EHsc /Fo.\build\ $(SRCS) $(INCLS)
+	lib $(OBJS) $(LIBS)
+	cl /Zi /MP /LD /Fo.\build\ $(SRCS) $(INCLS) /link /LIBPATH $(LIBS) /SUBSYSTEM:CONSOLE /OUT:build\simple2d.dll
+	del build\*.obj
+
 build: .phony
 	if not exist build mkdir build
 	cl /MP /c /EHsc /Fo.\build\ $(SRCS) $(INCLS)

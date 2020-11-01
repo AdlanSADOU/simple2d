@@ -263,7 +263,7 @@ typedef struct {
 
 // S2D_Window
 typedef struct {
-  void *on_update_args;
+  void *on_UpdateArgs;
   SDL_Window *sdl;
   SDL_GLContext glcontext;
   const GLubyte *S2D_GL_VENDOR;

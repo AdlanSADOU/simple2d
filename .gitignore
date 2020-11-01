@@ -8,3 +8,4 @@ test/audio
 test/controller
 test/*.exe
 test/screenshot.png
+vc140.pdb
