@@ -23,6 +23,6 @@ bool S2D_Intersect_Point_FRect(S2D_FRect rect, int point_x, int point_y)
     bool bottomLeft  = (point_y > rect.y);
     bool topRight    = (point_x < (rect.x + rect.width));
     bool bottomRight = (point_y < (rect.y + rect.height));
-
+    int i = 1;
     return (topLeft && topRight && bottomLeft && bottomRight);
 }
