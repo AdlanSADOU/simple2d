@@ -9,3 +9,4 @@ test/controller
 test/*.exe
 test/screenshot.png
 vc140.pdb
+vc120.pdb
