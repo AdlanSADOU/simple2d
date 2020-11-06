@@ -44,6 +44,7 @@ S2D_Window *S2D_CreateWindow(const char *title, int width, int height,
   window->background.a    = 1.0;
   window->icon            = NULL;
   window->close           = true;
+  window->deltaTime       = 0.0;
 
   // Return the window structure
   return window;
@@ -313,6 +314,7 @@ int S2D_Show(S2D_Window *window) {
     window->loop_ms    = loop_ms;
     window->delay_ms   = delay_ms;
     window->fps        = fps;
+    window->deltaTime  = (float)(1/fps) * 100;
 
     // Call update and render callbacks
     if (window->update) window->update(window->on_UpdateArgs);
