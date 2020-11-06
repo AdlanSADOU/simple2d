@@ -1,5 +1,8 @@
 // simple2d.h
 
+#if !defined(SIMPLE2D_H)
+#define SIMPLE2D_H
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -294,6 +297,7 @@ typedef struct {
   Uint32 loop_ms;
   Uint32 delay_ms;
   double fps;
+  float deltaTime;
   bool close;
 } S2D_Window;
 
@@ -800,3 +804,5 @@ void S2D_GL_FlushBuffers();
 #ifdef __cplusplus
 }
 #endif
+
+#endif // SIMPLE2D_H
